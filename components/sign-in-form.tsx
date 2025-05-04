@@ -59,7 +59,7 @@ export function SignInForm() {
       const { error } = await supabase.auth.signInWithOtp({
         email: magicLinkEmail,
         options: {
-          emailRedirectTo: `${window.location.origin}`,
+          emailRedirectTo: `https://v0-clone-daostreet-io.vercel.app/api/auth/callback`,
         },
       })
 
@@ -87,7 +87,7 @@ export function SignInForm() {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: `${window.location.origin}`,
+          redirectTo: `https://v0-clone-daostreet-io.vercel.app/api/auth/callback`,
         },
       })
 
